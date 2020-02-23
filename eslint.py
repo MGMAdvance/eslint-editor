@@ -24,7 +24,7 @@ def menuEslintrc():
     }
 
     while True:
-        print "Digite um numero correspondente:\n"
+        print "Enter a number of the list below:\n"
         print '''
         0 - Env
         1 - Extends
@@ -33,14 +33,14 @@ def menuEslintrc():
         4 - Parser Options
         5 - Rules
 
-        9 - Sair
+        9 - Quit
         
         '''
 
-        menu = raw_input('Digite o valor: ')
+        menu = raw_input('Enter a value: ')
         print menu
         if menu == '9':
-            print "Saindo do script"
+            print "\nCya!"
             break
         elif menu == '0':
             options[0]()
@@ -59,11 +59,11 @@ def menuEslintrc():
 def envMenu():
     eslint = readEslintrc()
 
-    print "Veja como esta o Env..."
+    print "Env selected..."
     print eslint["env"]
     print "\n--------\n"
 
-    goin = raw_input("Deseja modificar algo? (y/N): ")
+    goin = raw_input("You want to change something? (y/N): ")
     if goin == "y":
         while True:
             addKey(eslint["env"])
@@ -72,7 +72,7 @@ def envMenu():
             
             saveEslintrc(eslint)      
             
-            menu = raw_input("Deseja adicionar mais alguma coisa (y/N)? ")
+            menu = raw_input("Want to add something (y/N)? ")
 
             if menu == "y":
                 pass
@@ -84,21 +84,21 @@ def envMenu():
 def extendsMenu():
     eslint = readEslintrc()
 
-    print "Veja como esta o Extends..."
+    print "Extends selected..."
     print eslint["extends"]
     print "\n--------\n"
 
-    goin = raw_input("Deseja modificar algo? (y/N): ")
+    goin = raw_input("You want to change something? (y/N): ")
     if goin == "y":
         while True:
-            menu = raw_input("Qual o nome do Extend que deseja? ")
+            menu = raw_input("What is the name of the Extend you want? ")
             eslint["extends"].append(menu)
 
             print eslint["extends"]
             
             saveEslintrc(eslint)      
             
-            menu = raw_input("Deseja adicionar mais alguma coisa (y/N)? ")
+            menu = raw_input("Want to add something (y/N)? ")
 
             if menu == "y":
                 pass
@@ -111,21 +111,21 @@ def extendsMenu():
 def pluginsMenu():
     eslint = readEslintrc()
 
-    print "Veja como esta o Plugins..."
+    print "Plugins selected..."
     print eslint["plugins"]
     print "\n--------\n"
 
-    goin = raw_input("Deseja modificar algo? (y/N): ")
+    goin = raw_input("You want to change something? (y/N): ")
     if goin == "y":
         while True:
-            menu = raw_input("Qual o nome do Plugin que deseja? ")
+            menu = raw_input("What is the name of the Plugin you want? ")
             eslint["plugins"].append(menu)
 
             print eslint["plugins"]
             
             saveEslintrc(eslint)      
             
-            menu = raw_input("Deseja adicionar mais alguma coisa (y/N)? ")
+            menu = raw_input("Want to add something (y/N)? ")
 
             if menu == "y":
                 pass
@@ -137,11 +137,11 @@ def pluginsMenu():
 def globalsMenu():
     eslint = readEslintrc()
 
-    print "Veja como esta o Globals..."
+    print "Globals selected..."
     print eslint["globals"]
     print "\n--------\n"
 
-    goin = raw_input("Deseja modificar algo? (y/N): ")
+    goin = raw_input("You want to change something? (y/N): ")
     if goin == "y":
         while True:
             addKey(eslint["globals"])
@@ -150,7 +150,7 @@ def globalsMenu():
             
             saveEslintrc(eslint)      
             
-            menu = raw_input("Deseja adicionar mais alguma coisa (y/N)? ")
+            menu = raw_input("Want to add something (y/N)? ")
 
             if menu == "y":
                 pass
@@ -162,11 +162,11 @@ def globalsMenu():
 def parserOptionsMenu():
     eslint = readEslintrc()
 
-    print "Veja como esta o Parser Options..."
+    print "Parser Options selected..."
     print eslint["parserOptions"]
     print "\n--------\n"
 
-    goin = raw_input("Deseja modificar algo? (y/N): ")
+    goin = raw_input("You want to change something? (y/N): ")
     if goin == "y":
         while True:
             addKey(eslint["parserOptions"])
@@ -175,7 +175,7 @@ def parserOptionsMenu():
             
             saveEslintrc(eslint)      
             
-            menu = raw_input("Deseja adicionar mais alguma coisa (y/N)? ")
+            menu = raw_input("Want to add something (y/N)? ")
 
             if menu == "y":
                 pass
@@ -187,11 +187,11 @@ def parserOptionsMenu():
 def rulesMenu():
     eslint = readEslintrc()
 
-    print "Veja como esta o Rules..."
+    print "Rules selected..."
     print eslint["rules"]
     print "\n--------\n"
 
-    goin = raw_input("Deseja modificar algo? (y/N): ")
+    goin = raw_input("You want to change something? (y/N): ")
     if goin == "y":
         while True:
             addKey(eslint["rules"])
@@ -200,7 +200,7 @@ def rulesMenu():
             
             saveEslintrc(eslint)      
             
-            menu = raw_input("Deseja adicionar mais alguma coisa (y/N)? ")
+            menu = raw_input("Want to add something (y/N)? ")
 
             if menu == "y":
                 pass
@@ -210,8 +210,8 @@ def rulesMenu():
         pass
 
 def addKey(eslint):
-    key = raw_input("Adicione o nome: ")
-    value = raw_input("Adicione o valor:")
+    key = raw_input("Add a name: ")
+    value = raw_input("Add a value:")
     eslint[key] = value
 
     print eslint
@@ -221,5 +221,5 @@ def addKey(eslint):
 if __name__ == "__main__":
     
     menuEslintrc()
-    print "Finalizando o script..."
+    print "Terminated the script..."
 
